@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <lable for="">數值1</lable>
+    <!-- number只能打數字 如果要打各種數值就要用text -->
+    <input type="number" id="n1"> 
+    <br>
+    <lable for="">數值2</lable>
+    <input type="number" id="n2">
+    <button onclick="tot()">加總</button>
+    <br>
+    <p>合計結果</p>
+
+    <script>
+        // 建立一個加總函式
+        function tot() {
+            // 取得數值1的位置的內容
+            var n1=document.getElementById("n1");
+            // 取得數值2的位置的內容
+            var n2=document.getElementById("n2");
+            // 取得數值1的內容，顯示在指定的位置
+            document.getElementById("result").textContent=n1.value+n2.value;
+        }
+    </script>
+</body>
+</html>

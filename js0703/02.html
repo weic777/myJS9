@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 外層迴圈控制列數
+        for(var i=1;i<=5;i++){
+            // 內層迴圈控制每列的星號數量
+            // 因為星星個數等於外層目前列數
+            // 所以星星個數會跟目前列數值一樣
+            // 例如i=1時，內層迴圈只執行一次，輸出一個星號
+            for(var j=1;j<=i;j++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        document.write("<hr>");
+
+        
+    </script>
+</body>
+</html>
