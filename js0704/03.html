@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- lable示標籤 顯示標題 -->
+    <label for="n1">數值1</label>
+    <!-- number只能打數字 如果要打各種數值就要用text -->
+    <!-- input是文字方塊 -->
+    <input type="number" id="n1">
+    <p>
+        <!-- fun1這個字的內容是可以自己改自己定義的 -->
+        <!-- 字串包字串時要分別用一個單引號一個雙引號 -->
+        <button onclick="calc('+')">+</button>
+        <button onclick="calc('-')">-</button>
+        <button onclick="calc('*')">*</button>
+        <button onclick="calc('/')">/</button>
+
+    </p>
+    <label for="n2">數值2</label>
+    <input type="number" id="n2">
+    <br>
+    <p id="result">結果</p>
+
+    <script>
+        // 取得數值1的位置的內容
+        var n1 = document.getElementById("n1");
+        // 取得數值2的位置的內容
+        var n2 = document.getElementById("n2");
+        // 取得結果的位置的內容
+        var result = document.getElementById("result");
+
+        // op可以自己更改定義名稱
+        function calc(op) {
+            switch (op) {
+                case '+':
+                    result.textContent = parseInt(n1.value) + parseInt(n2.value);
+                    break;
+                case '-':
+                    result.textContent = parseInt(n1.value) - parseInt(n2.value);
+                    break;
+                case '*':
+                    result.textContent = parseInt(n1.value) * parseInt(n2.value);
+                    break;
+                case '/':
+                    result.textContent = (parseInt(n1.value) / parseInt(n2.value)).toFixed(2);
+                    break;
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

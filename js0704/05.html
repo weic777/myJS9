@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="result">結果</p>
+
+    <script>
+        var pass = 0;  // 及格
+        var fail = 0;  // 不及格
+        var total = 0;  // 總分
+        var avg = 0.0;  // 總平均 (因為會有小數點，所以要用浮點數)
+
+        while (1) {
+            var score = prompt("請輸入分數");
+            // 檢查是否取消
+            if (score == null) {
+                pass = 0;  // 及格
+                fail = 0;  // 不及格
+                total = 0;  // 總分
+                avg = 0.0;  // 總平均 (因為會有小數點，所以要用浮點數)
+                alert("您按了取消，即將結束")
+                break;
+            }
+            // 檢查是否空白
+            // 去除資料前後的空白 可以用trim()
+            if (score.trim() == "") {
+                alert("分數不能空白，請重新輸入");
+                continue; // 忽略以下程式碼，回到迴圈開始
+            }
+
+            // 有資料
+            // 檢查是否結束
+            if (score == -1) {
+                alert("成績輸入結束");
+                break; // 忽略以下程式碼，回到迴圈開始
+            }
+
+            // 字串轉數字
+            score = Number(score);
+
+            // 檢查是否為數字
+            if (isNaN(score)) {
+                alert("非數值，請重新輸入");
+                continue; // 忽略以下程式碼，回到迴圈開始
+
+            } else if (score < 0 || score > 100) {
+                alert("分數不是有效範圍，請輸入0-100之間");
+                continue; // 忽略以下程式碼，回到迴圈開始
+            }
+
+            // 檢查是否及格
+            if (score >= 60) {
+                pass++; // 及格人數加1
+            } else {
+                fail++; // 不及格人數加1
+            }
+
+            // 總分
+            total += score; // 總分加上目前的分數
+        }
+        // 平均
+        if(pass + fail > 0){
+            avg = total / (pass + fail);// 平均 = 總分 / 人數
+        }
+
+        // 顯示結果
+        var result = document.getElementById("result");
+
+        result.innerHTML = `
+        及格人數: ${pass}人<br>
+        不及格人數: ${fail}人<br>
+        總分: ${total}分<br>
+        平均: ${avg.toFixed(2)}分`; // toFixed(2) 保留兩位小數
+    </script>
+
+    <!-- <script>
+        while (1){
+            typeof parseInt(score)
+            var score = prompt("請輸入分數");
+            // 按了取消會回傳null，所以結束迴圈
+            if (score == null  || score == "-1") {
+                break;//結束迴圈
+            } else if (score == "") {
+                alert("分數不能空白，請重新輸入");
+                continue;//以下程式忽略
+            } else if (score < -1 || score > 100) {
+                alert("分數範圍錯誤，請重新輸入");
+                continue;//以下程式忽略
+            } else if (isNaN(Number(score))) {
+                // Number(值) 若是數字就回傳數字，若不是數字就回傳NaN
+                // 檢查NaN 就要用 isNaN(值)
+                alert("非數值，請重新輸入");
+                continue;
+            } 
+        }
+
+    </script> -->
+
+</body>
+
+</html>
