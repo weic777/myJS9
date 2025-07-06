@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var rd = Math.floor(Math.random()* 100)+1;  // 會回傳0-99之間的亂數
+
+        // 顯示亂數值
+        console.log(rd);
+
+        // 去除亂數的小數(無條件去除)
+        console.log(Math.floor(rd));
+
+        // 去除小數後加1
+        console.log(Math.floor(rd) + 1);
+        guess = Number(guess);
+        var min = 1
+        var max = 100
+        var count = 0
+
+        
+
+        while (1) {
+            count++;
+            var guess = prompt("請猜一個數字(1-100)");
+
+
+            if (guess == null) {
+                alert("您按了取消，即將結束")
+                break;
+            }
+            // 檢查是否空白
+            // 去除資料前後的空白 可以用trim()
+            else if (guess.trim() == "") {
+                alert("數字不能空白，請重新輸入");
+                continue; // 忽略以下程式碼，回到迴圈開始
+            }
+
+            else if (isNaN(guess)) {
+                // Number(值) 若是數字就回傳數字，若不是數字就回傳NaN
+                // 檢查NaN 就要用 isNaN(值)
+                alert("非數值，請重新輸入");
+                continue;
+            } else if (guess <= 0 || guess > 100) {
+                alert("分數不是有效範圍，請輸入1-100之間");
+                continue;//以下程式忽略
+            }
+
+            if (guess > rd) {
+                
+                alert(`第${count}次：太大了（提示：${min}-${guess})`);
+                max = guess
+                continue;
+
+            } else if (guess < rd) {
+                
+                alert(`第${count}次：太小了（提示：${guess}-${max})`);
+                min = guess
+                continue;
+
+            } else if (guess == rd) {
+                alert("恭喜你猜對了");
+                break;
+            } 
+            
+        }
+        
+                
+            
+
+    </script>
+</body>
+
+</html>
