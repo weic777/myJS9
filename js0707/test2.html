@@ -1,36 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        arr1 = [5, 60, 3, 90, 33, 1, 100];
-
+        let arr1 = [5, 60, 3, 90, 33, 1, 100];
+        let max = arr1[0]
+        let min = arr1[0]
 
         // 方法1:for
         console.log('for-----')
-        for(let i=0;i<arr1.length;i++){
-            arr1.sort((a,b)=>{
-                return b;
-            })
-            console.log(arr1[i]);
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] > max) {   // 檢查是否比目前的max大
+                max = arr1[i];
+            } else if (arr1[i] < min) {// 檢查是否比目前的min小
+                min = arr1[i];
+            }
         }
+        console.log(`max=${max},min:${min}`)
 
+        // 方法2:for of
+        // 語法
+        /*
+        for(let 變數 of 陣列名稱){
+
+        }
+        */
         console.log('for--of--')
-        for(let n of arr1){
-            if(typeof n == String){
-            console.log(n);}
-        }
+        max = arr1[0]
+        min = arr1[0]
+        for (let n of arr1) {
+            if (n > max) {
+                max = n;
+            } else if (n < min);
+        } console.log(`max=${max},min:${min}`);
 
-        console.log('forEach-----')
-        arr1.forEach((n)=>{
-            if(typeof n == String){
-            console.log(n)}
+        // 方法3:forEach
+        // 語法
+        /*
+        陣列名稱.forEach((變數 => {
+            ...
         })
+        */
+        console.log('forEach-----')
+        max = arr1[0]
+        min = arr1[0]
+        arr1.forEach((n) => {
+            if (n > max) {
+                max = n;
+            } else if (n < min);
+        })
+        console.log(`max=${max},min:${min}`);
+
+        //map
+        console.log('map-----')
+        max = arr1[0]
+        min = arr1[0]
+        arr1.map((n) => {
+            if (n > max) {
+                max = n;
+            } else if (n < min);
+        })
+        console.log(`max=${max},min:${min}`);
+
+        // sort
+        console.log('sort-----')
+        arr1.sort((a, b) => {
+            // 遞增排序
+            return a - b;
+        });
+        console.log(`max=${arr1[arr1.length-1]},min:${arr1[0]}`)
+
+        // 數學類別
+        // 最大值=>math.max()
+        // 最小值=>math.min()
+        max=Math.max(...arr1);  //...是其餘值
+        min=Math.min(...arr1);
+        console.log(`max=${max},min:${min}`);
 
     </script>
 </body>
+
 </html>
