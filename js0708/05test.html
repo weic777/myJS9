@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+
+    <h2>隨機產出樂透號碼</h2>
+    <hr>
+    
+    <p id="result"></p>
+
+
+    <script>
+        // 取得亂數值
+        let rd1 = Math.floor(Math.random() * 38) + 1;
+        let rd2 = Math.floor(Math.random() * 38) + 1;
+        let rd3 = Math.floor(Math.random() * 38) + 1;
+        let rd4 = Math.floor(Math.random() * 38) + 1;
+        let rd5 = Math.floor(Math.random() * 38) + 1;
+        let rd6 = Math.floor(Math.random() * 38) + 1;
+        let rd7 = Math.floor(Math.random() * 8) + 1;
+        let rd8 = Math.floor(Math.random() * 49) + 1;
+        let rd9 = Math.floor(Math.random() * 49) + 1;
+        let rd10 = Math.floor(Math.random() * 49) + 1;
+        let rd11 = Math.floor(Math.random() * 49) + 1;
+        let rd12 = Math.floor(Math.random() * 49) + 1;
+        let rd13 = Math.floor(Math.random() * 49) + 1;
+        let rd14 = Math.floor(Math.random() * 49) + 1;
+        let rd15 = Math.floor(Math.random() * 39) + 1;
+        let rd16 = Math.floor(Math.random() * 39) + 1;
+        let rd17 = Math.floor(Math.random() * 39) + 1;
+        let rd18 = Math.floor(Math.random() * 39) + 1;
+        let rd19 = Math.floor(Math.random() * 39) + 1;
+
+        let arr1 = [rd1,rd2,rd3,rd4,rd5,rd6];
+        let arr2 = [rd8,rd9,rd10,rd11,rd12,rd13];
+        let arr3 = [rd15,rd16,rd17,rd18,rd19];
+
+        // 使用箭頭函式寫法
+        arr1.sort((a, b) => {
+            // 遞增排序
+            return a - b;
+        });
+
+        arr2.sort((a, b) => {
+            // 遞增排序
+            return a - b;
+        });
+
+        arr3.sort((a, b) => {
+            // 遞增排序
+            return a - b;
+        });
+
+        var result = document.getElementById("result");
+        result.innerHTML = `
+        威力彩: <br>
+        數字: [ ${arr1}]<br>
+        特別號: [ ${rd7} ]<br><hr>
+
+        大樂透: <br>
+        數字:[ ${arr2} ]<br>
+        特別號:[ ${rd14} ]<br><hr>
+        
+        今彩: <br>
+        數字:[ ${arr3} ]<br>
+        `;
+
+    </script>
+
+
+</body>
+
+
+</html>
