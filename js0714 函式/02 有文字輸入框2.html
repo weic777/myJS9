@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="name">請輸入姓名﹔</label>  <!-- 點請輸入姓名 就會自動跳出輸入線-->
+    <input type="text" id="name">
+    <button onclick="sayhi3(getName())">確定</button>
+    <p id='showdata'> </p>
+
+    
+    <script>
+    // 寫法1﹔無參數無傳回值
+    function sayhi1(){
+        // 取得文字方塊位置
+        let name1=document.getElementById('name').value;
+
+        // 再取得顯示段落
+        let showData=document.getElementById('showdata')
+
+        // 顯示結果
+        showData.textContent=`hi,${name1}`;
+    }
+
+
+    // 寫法2﹔無參數有傳回值(此範例不適合)
+    // function sayhi2(){
+    //     // 取得文字方塊位置
+    //     let name1=document.getElementById('name').value;
+
+    //     // 再取得顯示段落
+    //     let showData=document.getElementById('showdata')
+
+    //     // 顯示結果
+    //     showData.textContent=`hi,${name1}`;
+
+    //     return name1;
+    //     }
+
+
+
+    // 寫法3﹔有參數沒有傳回值(此範例不適合)
+    function sayhi3(userName){
+        // 再取得顯示段落
+        let showData=document.getElementById('showdata')
+
+        // 顯示結果
+        showData.textContent=`hi,${userName}`;
+    }
+
+    // 取得姓名(無參數 有傳回值)
+    function getName(){
+        // 取得文字方塊位置
+        let name1=document.getElementById('name').value; 
+        return name1;
+    }
+
+    </script>
+
+</body>
+</html>
