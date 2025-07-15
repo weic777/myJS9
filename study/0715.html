@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //第一題
+        function printMany() {
+            for (let i = 1; i <= 100; i++) {
+                // console.log(i);
+            }
+        } printMany();
+
+        //第二題
+        function printEvery3() {
+            for (let i = 1; i <= 100; i = i + 3) {
+                // console.log(i);
+            }
+        } printEvery3();
+
+
+        // 第三題
+        function stars(n) { //要印幾顆星星
+            let stickerbook = '';   //空的貼紙簿
+            for (let i = 1; i <= n; i++) {
+                stickerbook = stickerbook + '*';//空的貼紙簿每次加上星星 加上stars(n)次
+            }
+            // console.log(stickerbook);
+        }
+        stars(3);	 // ***
+        stars(10);	 // **********
+
+        // 第四題
+        // function isUpperCase(en){
+        //     if (en.trim().length==0);{
+        //         return false;
+        //     }
+        // return en[0]===en[0].toUpperCase();
+
+        function isUpperCase(en) {
+            if (en.trim().length == 0) {
+                return false;
+            } else if (en[0] === en[0].toUpperCase()) {
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+
+        // console.log(isUpperCase("ABCD")); 		// returns true
+        // console.log(isUpperCase("")); 			// returns false
+        // console.log(isUpperCase("aBCD"));		// returns false
+
+
+        //第五題
+        function isAllUpperCase(en) {
+            if (en.trim().length == 0) {
+                return false
+            }
+            return en === en.toUpperCase();
+        }
+        // console.log(isAllUpperCase("ABCD")); 			// returns true
+        // console.log(isAllUpperCase("")); 				// returns false
+        // console.log(isAllUpperCase("ABCDEFGHIJKLm")); 	// returns false
+
+        //第六題
+        function position(en) {
+            for(let i=0;i<en.length;i++) //檢查輸入內容(en)每個字 i是位置
+            if(en[i]===en[i].toUpperCase()){//直到輸入內容是大寫
+                return en[i]+''+i  //''空字串是為了確保串接 且日後修改不會誤會不是字串的串接
+            }                      
+            return -1
+        }
+        // console.log(position("abcd")); 	// prints -1
+        // console.log(position("AbcD"));		// prints A 0
+        // console.log(position("abCD")); 	// prints C 2
+
+        
+
+
+
+    </script>
+</body>
+
+</html>
