@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 將函式當作其他函式的傳回值 就是指傳回值的內容是一個函式
+        let sayHi=(name)=>{
+            return function(){    //如果return裡用函式就要在最後呼叫加上()
+                console.log(name);
+            }
+        }
+        sayHi('ha')();
+
+        let sayHi2=(name)=>{
+            return console.log(name);
+        }
+        sayHi2('ha2')
+
+
+        let sayHi3=(name)=>{
+            //傳回值有參數
+            return function(str1){    
+                console.log('hi,'+name+','+str1);
+            }
+        }
+        //函式名稱(函式裡參數name)(傳回值中函式的參數str1)
+        sayHi3('ha3')('wow');
+        
+
+    </script>
+</body>
+</html>
